@@ -241,12 +241,6 @@ values."
   (setenv "LC_CTYPE" "zh_CN.UTF-8")
   (setenv "PATH" (concat "D:/Program Files/Git/usr/bin;" (getenv "PATH")))
   (setenv "PATH" (concat "D:/;" (getenv "PATH")))
-  (setq helm-fuzzy-match t)
-
-  (global-unset-key (kbd "M-/"))
-  (global-set-key (kbd "M-/") 'helm-dabbrev)
-  (global-set-key (kbd "C-c M-/") 'helm-yas-complete)
-  (global-prettify-symbols-mode t)
   "Initialization function for user code.
 It is called immediately after `dotspacemacs/init'.  You are free to put almost
 any user code here.  The exception is org related code, which should be placed
@@ -254,6 +248,13 @@ in `dotspacemacs/user-config'."
   )
 
 (defun dotspacemacs/user-config ()
+  (setq helm-fuzzy-match t)
+
+  (global-unset-key (kbd "M-/"))
+  (global-set-key (kbd "M-/") 'helm-dabbrev)
+  (global-set-key (kbd "C-c M-/") 'helm-yas-complete)
+  (global-prettify-symbols-mode t)
+
   (setq sentence-end "\\([。！？]\\|……\\|[.?!][]\"')}]*\\($\\|[ \t]\\)\\)[ \t\n]*")
   (setq sentence-end-double-space nil)
 
